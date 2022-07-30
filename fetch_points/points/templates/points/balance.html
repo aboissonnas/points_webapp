@@ -1,0 +1,9 @@
+<body>
+    {% for payer, points in points_by_payer.items %}
+        <p>Payer: {{ payer }} Points: {{ points }}</p>
+    {% endfor %}
+    {% if points_by_payer.keys|length < 1 %}
+        <p>There are currently no point balances.</p>
+    {% endif %}
+    <p><a href="{% url 'points:index' %}">Back</a></p>
+</body>

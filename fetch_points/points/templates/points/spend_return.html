@@ -1,0 +1,10 @@
+{% if not all_points_spent %}
+    <h1>There weren't enough points to spend. {{ spend_val }} points remain unspent.</h1>
+{% endif %}
+
+<body>
+    {% for payer, points in total_spent.items %}
+        <p>Payer: {{ payer }} Points: {{ points }}</p>
+    {% endfor %}
+    <p><a href="{% url 'points:index' %}">Back</a></p>
+</body>
